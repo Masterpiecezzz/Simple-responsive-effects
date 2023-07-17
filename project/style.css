@@ -1,0 +1,197 @@
+*,*::after,*::before
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(.5vh + .5vw);
+    font-weight: 1000;
+}
+header
+{
+    height: 20%;
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: .4s;
+}
+header div
+{
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 20%;
+    background-color: rgb(0, 153, 255);
+    border-radius: 70% / 10%;
+    animation: 1s move linear infinite;
+}
+@keyframes move
+{
+    0% {transform: translateX(0);}
+    25% {transform: translateX(-5%);}
+    50% {transform: translateX(0);}
+    75% { transform: translateX(5%);}
+    100% {transform: translateX(0);}
+}
+main
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    height: 70%;
+    width: 100%;
+    background-color: rgb(67, 117, 100);
+    transition: .4s;
+}
+main div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.square
+{
+    height: calc(8vh + 8vw);
+    width: calc(8vh + 8vw);
+    background-color: rgb(219, 121, 121);
+    border: 1vh solid #fff;
+    font-size: 5vh;
+    animation: 4s roll forwards infinite;
+    transition: .4s;
+}
+.triangle
+{
+    height: calc(8vh + 8vw);
+    width: calc(8vh + 8vw);
+    background-color: rgb(219, 121, 121);
+    font-size: 3vh;
+    animation: 2s roll ease-out infinite;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transition: .4s;
+}
+.circle
+{
+    height: calc(10vh + 10vw);
+    width: calc(10vh + 10vw);
+    border-radius: 100%;
+    background-color: rgb(219, 121, 121);
+    border: 1vh solid #fff;
+    font-size: 5vh;
+    animation: 1s roll linear infinite;
+    transition: .4s;
+}
+.rectangle
+{
+    height: calc(6vh + 6vw);
+    width: calc(8vh + 8vw);
+    background-color: rgb(219, 121, 121);
+    border: 1vh solid #fff;
+    font-size: 5vh;
+    animation: 2s roll forwards infinite;
+    transition: .4s;
+}
+@keyframes roll
+{
+    from {transform:rotate(0)}
+    to {transform: rotate(360deg);}
+}
+footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    background-color: rgb(182, 226, 211);
+    transition: .4s;
+}
+footer h1
+{
+    color: #fff;
+    animation: 1s scale forwards infinite;
+}
+@keyframes scale
+{
+    0% {letter-spacing: calc(.1vh + .1vw);}
+    50% {letter-spacing: calc(.2vh + .2vw);}
+    100% {letter-spacing: calc(.1vh + .1vw);}
+}
+@media only screen and (max-width: 600px)
+{
+    header
+    {
+        flex-direction: column;
+        background-color: rgb(179, 128, 226);
+    }
+    header div
+    {
+        border-radius: calc(1vh + 1vw);
+    }
+    main
+    {
+        background-color: rgb(72, 12, 128);
+    }
+    footer
+    {
+        background-color: rgb(89, 81, 97);
+    }
+    main div
+    {
+        height: 50%;
+        width: 50%;
+    }
+    .square
+    {
+        height: calc(8vh + 8vw);
+        width: calc(8vh + 8vw);
+        background-color: rgb(222, 255, 180);
+        font-size: 2vh;
+        animation: 2s roll ease-out infinite;
+    }
+    .triangle
+    {
+        height: calc(6vh + 6vw);
+        width: calc(8vh + 8vw);
+        background-color: rgb(146, 88, 88);
+        font-size: 2vh;
+        animation: 2s roll forwards infinite;
+    }
+    .circle
+    {
+        height: calc(6vh + 6vw);
+        width: calc(8vh + 8vw);
+        background-color: rgb(154, 190, 231);
+        border: 1vh solid #fff;
+        font-size: 2vh;
+        animation: 2s roll forwards infinite;
+    }
+    .rectangle
+    {
+        height: calc(10vh + 10vw);
+        width: calc(10vh + 10vw);
+        border-radius: 100%;
+        background-color: rgb(245, 184, 253);
+        border: 1vh solid #fff;
+        font-size: 2vh;
+        animation: 1s roll linear infinite;
+    }
+    footer
+    {
+        flex-direction: column;
+    }
+}
